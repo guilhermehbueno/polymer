@@ -1,0 +1,36 @@
+{
+  "name": "polymer-elements",
+  "version": "0.0.20131010",
+  "homepage": "https://github.com/Polymer/polymer-elements",
+  "authors": [
+    "Polymer Authors <polymer-dev@googlegroups.com>"
+  ],
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "polymer": ">=0.0.20131010"
+  },
+  "description": "A common set of polymer elements",
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "docs",
+    "tools"
+  ],
+  "_release": "0.0.20131010",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.20131010",
+    "commit": "4dc3e1253bc65c59f1302367b717724bba4b76ad"
+  },
+  "_source": "git://github.com/Polymer/polymer-elements.git",
+  "_target": "~0.0.20131010",
+  "_originalSource": "polymer-elements",
+  "_direct": true
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+     <script src="bower_components/polymer/polymer.min.js"></script>
+     <link rel="import" href="templates/tk-element.html">
+     <link rel="import" href="bower_components/polymer-elements/polymer-ajax/polymer-ajax.html">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <tk-element></tk-element>
+
+
+    <polymer-ajax auto url="http://localhost:8983/solr/search/select" 
+    params='{ "start": "0", "q": "*:*", "wt": "json", "version": "2.2", "rows": "10"}' 
+    handleAs="json"
+    on-polymer-response="handleResponse">
+	</polymer-ajax>
+
+
+  <template repeat="{{response.feed.entry}}">
+    <div>{{title.$t}}</div>
+  </template>
+
+	
+  <script>
+    document.addEventListener('WebComponentsReady', function() {
+      var ajax = document.querySelector("polymer-ajax");
+      ajax.addEventListener("polymer-response", 
+        function(e) {
+          document.querySelector('template').model = {
+            response: e.detail.response
+          };
+        }
+      );
+    });
+  </script>
+
+  </body>
+</html>
